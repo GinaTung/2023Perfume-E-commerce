@@ -372,13 +372,30 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 
 // scss-docs-start spacer-variables-maps
 $spacer: 1rem !default;
-$spacers: (
+$spacers: (//*custom
   0: 0,
   1: $spacer * .25,
   2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+  3: $spacer *0.75,//12
+  4: $spacer * 1,
+  5: $spacer * 1.25,//20
+  6: $spacer * 1.5,
+  7: $spacer *1.75,
+  8: $spacer * 2,
+  9: $spacer * 2.25,
+  10: $spacer * 2.5,
+  11: $spacer *2.75,
+  12: $spacer * 3,
+  13: $spacer * 3.25,
+  14: $spacer *3.5,
+  15: $spacer * 3.75,
+  16: $spacer * 4,
+  17: $spacer * 4.25,
+  18: $spacer *4.5,//72
+  19: $spacer * 4.75,
+  20: $spacer * 5,//80
+  25: $spacer *6.25,//100
+  30: $spacer * 7.5
 ) !default;
 // scss-docs-end spacer-variables-maps
 
