@@ -1,4 +1,20 @@
-.footer{
-  background: #69F0AE;
-  font-size: 64px;
+.footer-bg{
+  background-image: url("../images/anis-m.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 46%;
+  background-size: cover;
+  width: 100%;
+}
+.footer-ad{
+  padding-top: 312px;
+  padding-bottom: 112px;
+}
+.form-control{
+  border: 1px solid $info !important;
+  padding: 20px 16px !important;
+  border-radius: 4px 0 0px 4px !important;
+  color: $light2 !important;
+}
+.btn-size{
+  padding: 20px 26px !important;
 }

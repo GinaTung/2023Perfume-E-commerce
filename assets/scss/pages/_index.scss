@@ -1,10 +1,77 @@
-.index-title {
-  font-size: 100px;
-}
+
 .banner{
-  background-image: url("../assets/images/laura-chouette-1.jpg");
+  background-image: url("../images/laura-chouette-1.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 295px 405px;
+padding-top: 295px;
+padding-bottom: 295px;
+  width: 100%;
 };
+@media(max-width:992px){
+  .banner{
+    padding: 101px 0px 135px 0px;
+  }
+}
+.ptb-14{
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+
+}
+.ps-110{
+  padding-left: 110px !important;
+}
+@media(max-width:992px){
+  .ps-110{
+    padding-left: 8px !important;
+  }
+}
+@media(min-width:992px){
+  .py-92{
+    padding-top: 92px;
+    padding-bottom: 92px;
+  }
+}
+@media(min-width:992px){
+  .pr-30{
+    padding-right: 30px !important;
+  }
+}
+.img-size{
+  height:350px !important;
+  object-fit: cover;
+}
+@media(min-width:992px){
+  .img-size{
+    height: 555px !important;
+  }
+}
+.order-5{
+  order:5 !important;
+}
+.order-6{
+  order:6 !important;
+}
+.order-7{
+  order:7 !important;
+}
+.order-8{
+  order:8 !important;
+}
+.text-content-size{
+  width: 100% !important;
+}
+@media(min-width:992px){
+  .text-content-size{
+    width: 350px !important;
+  }
+}
+.img-size2{
+  height:520px !important;
+  object-fit: cover;
+}
+@media(min-width:992px){
+  .img-size2{
+    height: auto !important;
+  }
+}
