@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>product</title>
+
+</head>
+
+<body>
+  <%- include('./layout/header'); -%>
+    <%- include('./layout/header2'); -%>
+      <div class="py-15">
+        <div class="container">
+          <div class="row row-cols-2 row-cols-lg-4 g-5 product-wrap">
+            <%- include('./layout/loading'); -%>
+          </div>
+          <div class="pagination d-flex justify-content-center pt-15"></div>
+        </div>
+      </div>
+      <%- include('./layout/footer'); -%>
+        <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+        <script type="module" src="../assets/js/viewGetProducts.js"></script>
+        <script type="module" src="../main.js"></script>
+</body>
+
+</html>
