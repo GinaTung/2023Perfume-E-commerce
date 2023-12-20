@@ -1,72 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>香水電商</title>
-    <script type="module" crossorigin src="/2023Perfume-E-commerce/assets/main-fdb47ee1.js"></script>
-    <link rel="stylesheet" href="/2023Perfume-E-commerce/assets/main-57b7126e.css">
-  </head>
-  <body>
-    <nav class="navbar navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand"><img src="/2023Perfume-E-commerce/assets/d’Perfume-134d1d5c.png" alt="香水電商"></a>
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>香水電商</title>
+  <script type="module" crossorigin src="/2023Perfume-E-commerce/assets/main-efcdc7a9.js"></script>
+  <link rel="stylesheet" href="/2023Perfume-E-commerce/assets/main-11615a0d.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-white bg-white">
+    <div class="container d-flex align-items-center">
+        <a class="navbar-brand" href="index.html"><img src="/2023Perfume-E-commerce/assets/d’Perfume-134d1d5c.png" alt="香水電商"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item d-flex align-items-center me-lg-7">
+                    <a href="#" class="d-flex text-decoration-none">
+                        <span class="material-symbols-outlined nav-link me-1 p-0 fs-4" style="color: #8D8D8D;">
+                            store
+                        </span>
+                        <span class="fs-6 text-light2">Product</span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex align-items-center me-lg-7">
+                    <a href="#" class="d-flex text-decoration-none">
+                        <span class="material-symbols-outlined nav-link me-1 p-0 fs-4" style="color: #8D8D8D;">
+                            person
+                        </span>
+                        <span class="fs-6 text-light2">log in</span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex align-items-center me-lg-7">
+                    <a href="#" class="d-flex text-decoration-none">
+                        <span class="material-symbols-outlined nav-link me-1 p-0 fs-4" href="#" style="color: #8D8D8D;">
+                            favorite
+                        </span>
+                        <span class="fs-6 text-light2">Wishlist</span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex align-items-center">
+                    <a href="#" class="d-flex text-decoration-none">
+                        <span class="material-symbols-outlined nav-link me-1 p-0 fs-4" href="#" style="color: #8D8D8D;">
+                            shopping_cart
+                        </span>
+                        <span class="fs-6 text-light2">Cart(3)</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-</nav>    <div class="banner mb-20">
-      <div class="banner-content col-5 ms-auto">
-        <h1>Perfume your day</h1>
-        <p class="mb-4">A perfume is like a piece of clothing, a message, a way of presenting oneself a costume that according to the person who wears it.</p>
-        <a type="button" class="btn btn-outline-primary rounded-pill">Shop now</a>
+</nav>    <div class="banner">
+      <div class="container">
+        <div class="banner-content ms-lg-auto w-lg-40 w-100 text-white">
+          <h1 class="mb-0 fw-bold fs-2 fs-lg-1">Perfume your day</h1>
+          <p class="mb-4 fs-5 fs-lg-4">A perfume is like a piece of clothing, a message, a way of presenting oneself a costume
+            that according to the person who wears it.</p>
+          <a type="button" class="btn btn-outline-white rounded-pill col-12 col-lg-9 ptb-14 fs-3 fw-bold">Shop now</a>
+        </div>
       </div>
     </div>
-
-    <h1 class="index-title">我是首頁</h1>
-
-    <div class="card" style="width: 18rem">
-      <img src="/2023Perfume-E-commerce/assets/cat-0c0689ae.jpg" class="card-img-top" alt="cat" />
-      <div class="card-body">
-        <h5 class="card-title">卡片元件</h5>
-        <p class="card-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, odit, iusto odio assumenda alias id
-          nobis earum!
-        </p>
-      </div>
-    </div>
-
-    <!-- Modal 按鈕 -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      打開 modal
-    </button>
-
-    <!-- Modal 元件 -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal 標題</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="container mb-15 mt-19">
+      <div class="row g-4">
+        <div class="col-12 col-lg-6 mt-0 d-flex align-items-center justify-content-center pe-lg-0 order-2 order-lg-0 mt-2 mb-8 mt-lg-0 mb-lg-0">
+          <div class="text-content-size">
+            <h2 class="fw-bold mb-0 fs-2">Gabrielle CHANEL</h2>
+            <p class="fs-5 fw-light">全新嗅覺體驗，花香四溢、明亮馥郁。結合茉莉、依蘭依蘭、橙花和最迷人的格拉斯晚香玉之花香，呈現出夢幻花香氣息。 極具女性特質的香奈兒嘉柏麗香水，專為光芒四射的她而生。
+            </p>
+            <a href="#" class="text-warning text-decoration-none fw-semibold">查看更多</a>
           </div>
-          <div class="modal-body">內容</div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-            <button type="button" class="btn btn-primary">確定</button>
+        </div>
+        <div class="col-12 col-lg-6 mt-0 ps-lg-0 order-1 order-lg-0">
+          <img src="/2023Perfume-E-commerce/assets/olena-bohovyk-b1b80304.jpg" class="card-img-top img-fluid img-size" alt="Gabrielle CHANE"
+            >
+        </div>
+        <div class="col-12 col-lg-6 mt-0 pe-lg-0 order-3 order-lg-0">
+          <img src="/2023Perfume-E-commerce/assets/photo-1-fda5cd0f.png" class="card-img-top img-fluid img-size" alt="Gabrielle CHANE"
+            >
+        </div>
+        <div class="col-12 col-lg-6 mt-0 d-flex align-items-center justify-content-center ps-lg-0 order-4 order-lg-0 mt-2 mb-8 mt-lg-0 mb-lg-0">
+          <div class="text-content-size">
+            <h2 class="fw-bold mb-0">Five O’clock<br>Au Gingembre</h2>
+            <p class="fs-5 fw-light">生薑與溫醇的肉桂香、紅糖的香甜摻和成一氣，溫暖微辛的氣息反倒形成一股輕煙氤氳開來，還帶點微微煙醺感漫溢在整個鼻息之間，細聞之下,又還有溫溫淡淡的木香，溫和而暖心。
+            </p>
+            <a href="#" class="text-warning text-decoration-none fw-semibold">查看更多</a>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 mt-0 d-flex align-items-center justify-content-center pe-lg-0 order-6 order-lg-0 mt-2 mb-8 mt-lg-0 mb-lg-0">
+          <div class="text-content-size">
+            <h2 class="fw-bold mb-0">CHANEL N°5</h2>
+            <p class="fs-5 fw-light">N°5，女性魅力的極致精髓。散發柔美澄透的乙醛花束香氣。經典傳奇香氛，蘊藏於極簡設計的獨特瓶身。
+            </p>
+            <a href="#" class="text-warning text-decoration-none fw-semibold">查看更多</a>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 mt-0 ps-lg-0 order-5 order-lg-0">
+          <img src="/2023Perfume-E-commerce/assets/erin-east-c630efe7.jpg" class="card-img-top img-fluid img-size" alt="Gabrielle CHANE"
+            >
+        </div>
+        <div class="col-12 col-lg-6 mt-0 pe-lg-0 order-7 order-lg-0">
+          <img src="/2023Perfume-E-commerce/assets/annie-spratt-660fc86b.jpg" class="card-img-top img-fluid img-size h-100" alt="Gabrielle CHANE"
+            style="object-fit: cover;">
+        </div>
+        <div class="col-12 col-lg-6 mt-0 py-92 ps-110 order-8 order-lg-0 mt-2 mb-8 mt-lg-0 mb-lg-0">
+          <div class="mb-13 text-content-size">
+            <h5 class="fw-semibold mb-0 mb-1">1.<br>Levels of Preventive<br>Maintenance Compliance</h5>
+            <p class="fw-light">The core idea of preventative maintenance is the performance of proactive actions
+              against unscheduled downtime in order to identify potential defects before they evolve into something more
+              severe.
+            </p>
+          </div>
+          <div class="mb-13 text-content-size">
+            <h5 class="fw-semibold mb-0 mb-1">2.<br>Percentage of <br>Planned Maintenance</h5>
+            <p class="fw-light">The core idea of preventative maintenance is the performance of proactive actions
+              against unscheduled downtime in order to identify potential defects before they evolve into something more
+              severe.
+            </p>
+          </div>
+          <div class="mb-13 text-content-size">
+            <h5 class="fw-semibold mb-0 mb-1">3.<br>Critical percentage of <br>planned maintenance</h5>
+            <p class="fw-light">The core idea of preventative maintenance is the performance of proactive actions
+              against unscheduled downtime in order to identify potential defects before they evolve into something more
+              severe.
+            </p>
+          </div>
+          <a type="button" class="btn btn-outline-black border-2 rounded-pill col-12 col-lg-9 ptb-14 fs-5 fw-medium"
+          >Plan a free online training</a>
+        </div>
+      </div>
+    </div>
+    <div class="bg-light py-8">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-lg-3 g-4">
+          <div class="col">
+            <div class="card border-0">
+              <img src="/2023Perfume-E-commerce/assets/hyunwon-jang-800c11c2.jpg" class="card-img-top img-fluid h-100" alt="Poppy & Barley">
+              <div class="card-body bg-light border-0 px-0 pt-2 pb-0">
+                <h5 class="card-title fw-semibold mb-0">Poppy & Barley</h5>
+                <p class="fw-light">Jo Malone</p>
+                <p class="card-text d-flex">
+                  <span class="pe-2">NT$1,380</span>
+                  <span class="text-decoration-line-through text-light2">NT$1,580</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card border-0 h-100">
+              <img src="/2023Perfume-E-commerce/assets/curology-e9ee670f.jpg" class="card-img-top img-fluid h-100" alt="Body Wash">
+              <div class="card-body bg-light border-0 px-0 pt-2 pb-0">
+                <h5 class="card-title fw-semibold mb-0">Body Wash</h5>
+                <p class="fw-light">Curology</p>
+                <p class="card-text d-flex">
+                  <span class="pe-2">NT$1,580</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card border-0 h-100">
+              <img src="/2023Perfume-E-commerce/assets/the-tonik-409bce28.jpg" class="card-img-top img-fluid h-100"
+                alt="Apple Cider Vinegar Capsule">
+              <div class="card-body bg-light border-0 px-0 pt-2 pb-0">
+                <h5 class="card-title fw-semibold mb-0">Apple Cider Vinegar Capsule</h5>
+                <p class="fw-light">Tonik</p>
+                <p class="card-text d-flex">
+                  <span class="pe-2">NT$1,580</span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="container my-lg-15 my-8">
+      <div class="row">
+        <div class="col-12 col-lg-8 pr-30">
+          <img src="/2023Perfume-E-commerce/assets/laura-chouette-a247da0c.jpg" alt="laura-chouette" class="img-fluid img-size2">
+        </div>
+        <div class="col-12 col-lg-4 ps-lg-0 my-auto mt-2 mt-lg-0">
+          <h3 class="fw-bold fs-2">Bottle-Recycling</h3>
+          <p class="fs-5 mb-4 fw-light fs-5">Recycle your used empty bottles and be rewarded!</p>
+          <p class="mb-4 fw-light">For the past 10 years, we have collected over 800,000 bottles through Empty Bottle Recycling Campaign and planted more than 860 pine trees for a better environment.For the past 10 years, we have collected over 800,000 bottles through Empty Bottle Recycling Campaign and planted more than 860 pine trees for a better environment.</p>
+          <a href="#" class="text-warning text-decoration-none fw-semibold">查看更多</a>
+        </div>
+      </div>
+    </div>
 
-    <footer class="footer">我是 footer</footer>
-    
-  </body>
+    <div class="footer-bg">
+    <div class="container">
+        <div class="footer-ad" style="width: 350px;">
+            <p class="mb-5 fw-semibold text-light2 fs-2">記得<br>訂閱以獲取更多資訊！</p>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Your email address"
+                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn btn-info btn-size" type="button" id="button-addon2">Subscribe</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-white bg-info">
+    <div class="container d-flex align-items-center justify-content-between justify-content-lg-start">
+
+        <a class="navbar-brand me-5" href="index.html">
+            <img src="data:image/png;base64,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" alt="香水電商">
+        </a>
+        <span class="text-white fs-7 fs-lg-6 text-end">© 2020. All Rights Reserved.</span>
+        <div class="collapse navbar-collapse d-none d-lg-block" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item d-flex align-items-center">
+                    <a href="#" class="d-flex text-decoration-none">
+                        <span class="fs-6 text-white">Product</span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex align-items-center ms-9">
+                    <a href="#" class="d-flex text-decoration-none">
+                        <span class="fs-6 text-white ">Blog</span>
+                    </a>
+                </li>
+                <li class="nav-item d-flex align-items-center ms-9">
+                    <a href="#" class="d-flex text-decoration-none">
+                        <span class="fs-6 text-white">Contact</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+      
+</body>
+
 </html>
