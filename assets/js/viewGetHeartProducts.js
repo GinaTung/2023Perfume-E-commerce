@@ -186,14 +186,21 @@ productWrap.addEventListener("click", function (e) {
 
   if (heartIcon || heartIconFill) {
     // 處理愛心點擊事件
-    if (heartIcon) {
-      // alert("已加入我的收藏")
-      Swal.fire("已加入我的收藏");
+    if(heartIcon){
+      Swal.fire({
+        title: "已加入我的收藏",
+        confirmButtonColor: "#916000",
+        confirmButtonText: "OK"
+      });
       handleHeartClick(heartIcon);
       // 將產品ID存儲在localStorage中
-      saveProductIdToLocalStorage(productId);
-    } else {
-      Swal.fire("已移除我的收藏");
+    saveProductIdToLocalStorage(productId);
+    }else{
+      Swal.fire({
+        title: "已移除我的收藏",
+        confirmButtonColor: "#916000",
+        confirmButtonText: "OK"
+      });
       handleHeartClick(heartIconFill);
       saveProductIdToLocalStorage(productId);
     }

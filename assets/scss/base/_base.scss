@@ -6,11 +6,11 @@ a:hover{
 }
 .nav-item a{
     color: $light2;
-
-    span:hover{
-        color: $info !important;
+    &:hover{
+        color: $warning !important;
     }
 }
+
 @media(max-width:992px){
     .nav-item{
         background-color: $dark;
@@ -20,5 +20,11 @@ a:hover{
     }
     .nav-item a{
         color: white;
+    }
+}
+.link-hover{
+    color: $white !important;
+    &:hover{
+        color: $warning !important;
     }
 }
