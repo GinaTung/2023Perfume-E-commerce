@@ -77,7 +77,7 @@ function renderProductList(products) {
   productWrap.innerHTML = str;
 }
 
-// B頁面的渲染產品資料函數
+// 收藏頁面的渲染產品資料函數
 function renderProductData() {
   if (!checkIfCollectionExists()) {
     // 如果未有收藏，結束函數

@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// A頁面的點擊事件處理邏輯
+// 產品頁面的點擊事件處理邏輯
 productWrap.addEventListener("click", function (e) {
   e.preventDefault();
 
