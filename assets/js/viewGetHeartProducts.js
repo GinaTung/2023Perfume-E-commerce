@@ -14,7 +14,7 @@ function getProductList() {
       renderProductData();
       renderPagination();
       //   changeProducts();
-      console.log(data);
+      // console.log(data);
     })
     .catch(function (error) {
       // handle error
@@ -79,35 +79,70 @@ function renderProductList(products) {
 
 // B頁面的渲染產品資料函數
 function renderProductData() {
-    const productIds = JSON.parse(localStorage.getItem("productIds")) || [];
-    const productData = getProductDataById(productIds);
-    renderProductList(productData);
-    changeProducts(productData);
+  if (!checkIfCollectionExists()) {
+    // 如果未有收藏，結束函數
+    return;
   }
-  
-  // 根據產品ID獲取產品資料的函數
-  function getProductDataById(productIds) {
-    const filteredProducts = productIds.map((productId) => {
-      return data.find((item) => item.id === productId);
-    });
-    return filteredProducts;
+  const productIds = JSON.parse(localStorage.getItem("productIds")) || [];
+  const productData = getProductDataById(productIds);
+  renderProductList(productData);
+  changeProducts(productData);
+}
+// 在這裡加入檢查是否有收藏 ID 的邏輯
+function checkIfCollectionExists() {
+  const productIds = JSON.parse(localStorage.getItem("productIds")) || [];
+
+  if (productIds.length === 0) {
+    // 若資料為空，顯示未收藏畫面文字
+    productWrap.innerHTML = `
+      <div class="col-12 bg-warning w-100 d-flex align-items-center justify-content-center fs-1" style="height:363px;">目前無任何產品收藏</div>
+    `;
+    return false; // 表示未有收藏
   }
+
+  return true; // 表示有收藏
+}
+// 根據產品ID獲取產品資料的函數
+function getProductDataById(productIds) {
+  const filteredProducts = productIds.map((productId) => {
+    return data.find((item) => item.id === productId);
+  });
+  return filteredProducts;
+}
 
 // 監聽篩選
 function changeProducts(products) {
   productSelect.addEventListener("click", function (e) {
-    //   console.log(e.target);
     let productType = e.target.getAttribute("data-name");
     if (productType === "全部") {
-      renderProductList(products);
+      if (products.length === 0) {
+        // 若資料為空，顯示無資料畫面文字
+        productWrap.innerHTML = `
+          <div class="col-12 bg-warning w-100 d-flex align-items-center justify-content-center fs-1" style="height:363px;">目前無任何產品收藏</div>
+        `;
+      } else {
+        // 將所有在收藏列表中的產品顯示在畫面上
+        const favoriteProducts = products.filter((item) =>
+          isProductFavorite(item.id)
+        );
+        if (favoriteProducts.length === 0) {
+          // 若資料為空，顯示無資料畫面文字
+          productWrap.innerHTML = `
+            <div class="col-12 bg-warning w-100 d-flex align-items-center justify-content-center fs-1" style="height:363px;">目前無任何產品收藏</div>
+          `;
+        } else {
+          renderProductList(favoriteProducts);
+        }
+      }
       return;
     }
 
     let str = "";
     let hasCategory = false; // 用於標記是否有相應的產品類別
     products.forEach(function (item) {
-      if (productType === item.category) {
-        console.log(item.category);
+      const isFavorite = isProductFavorite(item.id); // 檢查是否已經收藏
+      if (productType === item.category && isFavorite) {
+        // console.log(item.category);
         str += combineProductList(item);
         hasCategory = true;
       }
@@ -139,50 +174,55 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
 productWrap.addEventListener("click", function (e) {
-    e.preventDefault();
-  
-    // 獲取產品ID
-    const productId = e.target.getAttribute("data-id");
-  
-    // 確保點擊的是愛心圖標
-    const heartIcon = e.target.closest(".bi-heart");
-    const heartIconFill = e.target.closest(".bi-heart-fill");
-  
-    if (heartIcon || heartIconFill) {
-      // 處理愛心點擊事件
-      handleHeartClick(heartIcon || heartIconFill);
-  
+  e.preventDefault();
+
+  // 獲取產品ID
+  const productId = e.target.getAttribute("data-id");
+
+  // 確保點擊的是愛心圖標
+  const heartIcon = e.target.closest(".bi-heart");
+  const heartIconFill = e.target.closest(".bi-heart-fill");
+
+  if (heartIcon || heartIconFill) {
+    // 處理愛心點擊事件
+    if (heartIcon) {
+      // alert("已加入我的收藏")
+      Swal.fire("已加入我的收藏");
+      handleHeartClick(heartIcon);
       // 將產品ID存儲在localStorage中
       saveProductIdToLocalStorage(productId);
-    }
-  });
-
-  // 愛心點擊處理函數
-function handleHeartClick(heartIcon) {
-    heartIcon.classList.toggle("heart-click");
-    heartIcon.classList.toggle("bi-heart");
-    heartIcon.classList.toggle("bi-heart-fill");
-  }
-  
-  // 將產品ID存儲在localStorage中
-  function saveProductIdToLocalStorage(productId) {
-    // 先獲取已有的產品ID數組
-    let productIds = JSON.parse(localStorage.getItem("productIds")) || [];
-    const index = productIds.indexOf(productId);
-  
-    if (index !== -1) {
-      // 如果產品已經在收藏列表中，則從列表中移除
-      productIds.splice(index, 1);
     } else {
-      // 如果產品不在收藏列表中，則添加到列表
-      productIds.push(productId);
+      Swal.fire("已移除我的收藏");
+      handleHeartClick(heartIconFill);
+      saveProductIdToLocalStorage(productId);
     }
-    // 更新 localStorage 中的收藏列表
-    localStorage.setItem("productIds", JSON.stringify(productIds));
-  
-    // 重新渲染產品列表
-    renderProductData();
   }
-  
+});
+
+// 愛心點擊處理函數
+function handleHeartClick(heartIcon) {
+  // heartIcon.classList.toggle("heart-click");
+  heartIcon.classList.toggle("bi-heart");
+  heartIcon.classList.toggle("bi-heart-fill");
+}
+
+// 將產品ID存儲在localStorage中
+function saveProductIdToLocalStorage(productId) {
+  // 先獲取已有的產品ID數組
+  let productIds = JSON.parse(localStorage.getItem("productIds")) || [];
+  const index = productIds.indexOf(productId);
+
+  if (index !== -1) {
+    // 如果產品已經在收藏列表中，則從列表中移除
+    productIds.splice(index, 1);
+  } else {
+    // 如果產品不在收藏列表中，則添加到列表
+    productIds.push(productId);
+  }
+  // 更新 localStorage 中的收藏列表
+  localStorage.setItem("productIds", JSON.stringify(productIds));
+
+  // 重新渲染產品列表
+  renderProductData();
+}

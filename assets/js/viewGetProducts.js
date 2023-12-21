@@ -13,7 +13,7 @@ function getProductList() {
       renderProductList();
       renderPagination();
       changeProducts();
-      console.log(data);
+      // console.log(data);
     })
     .catch(function (error) {
       // handle error
@@ -90,7 +90,7 @@ function changeProducts() {
     let str = "";
     data.forEach(function (item) {
       if (productType === item.category) {
-        console.log(item.category);
+        // console.log(item.category);
         str += combineProductList(item);
       }
     });
@@ -129,16 +129,23 @@ productWrap.addEventListener("click", function (e) {
 
   if (heartIcon || heartIconFill) {
     // 處理愛心點擊事件
-    handleHeartClick(heartIcon || heartIconFill);
-
-    // 將產品ID存儲在localStorage中
+    if(heartIcon){
+      // alert("已加入我的收藏")
+      Swal.fire("已加入我的收藏");
+      handleHeartClick(heartIcon);
+      // 將產品ID存儲在localStorage中
     saveProductIdToLocalStorage(productId);
+    }else{
+      Swal.fire("已移除我的收藏");
+      handleHeartClick(heartIconFill);
+      saveProductIdToLocalStorage(productId);
+    }
   }
 });
 
 // 愛心點擊處理函數
 function handleHeartClick(heartIcon) {
-  heartIcon.classList.toggle("heart-click");
+  // heartIcon.classList.toggle("heart-click");
   heartIcon.classList.toggle("bi-heart");
   heartIcon.classList.toggle("bi-heart-fill");
 }
